@@ -2878,7 +2878,7 @@ public:
             if (pTok)
             {
                 // Cache this cell.
-                mpRefTab->setCell(mpCurCol->GetCol(), nRow, pTok, mpCurCol->GetNumberFormat(nRow));
+                mpRefTab->setCell(mpCurCol->GetCol(), nRow, pTok, mpCurCol->GetNumberFormat(mpCurCol->GetDoc().GetNonThreadedContext(), nRow));
                 mpRefTab->setCachedCell(mpCurCol->GetCol(), nRow);
             }
         }
