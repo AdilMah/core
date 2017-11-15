@@ -215,6 +215,11 @@ short FormulaToken::GetDoubleType() const
     return 0;
 }
 
+void FormulaToken::SetDoubleType( short )
+{
+    SAL_WARN( "formula.core", "FormulaToken::SetDoubleType: virtual dummy called" );
+}
+
 svl::SharedString FormulaToken::GetString() const
 {
     SAL_WARN( "formula.core", "FormulaToken::GetString: virtual dummy called" );
@@ -1794,6 +1799,11 @@ bool FormulaDoubleToken::operator==( const FormulaToken& r ) const
 short FormulaTypedDoubleToken::GetDoubleType() const
 {
     return mnType;
+}
+
+void FormulaTypedDoubleToken::SetDoubleType( short nType )
+{
+    mnType = nType;
 }
 
 bool FormulaTypedDoubleToken::operator==( const FormulaToken& r ) const
